@@ -67,3 +67,23 @@ cat /hello.txt
 * <b>ohai</b> is a tool that will actually gather host-specific details for you and present them to you in json. It's available when you have chefDK installed. Just run `ohai`
 * <b>ohai</b> query the OS with the nu;ber of commands. Everytime you run chef-client command, ohai is executed and store data about the node in an object usable in the recipe
 * <b>Chef Template</b> usefull to include content into recipe: `chef generate template [/path/to/cookbook] NAME [options]`
+
+### Chef Server
+* <b>knife</v> is a command-line tool that provides an interface between a local chef-repo and the chef Server. With it you can communiate with chef server or your node
+* You need to bootstarp your node `knife bootstrap FGDN -x USER -P PWD --sudo -N node1 -r "recipe[cookbook]"`. this will create a chef-client into your node and the client will inform the node about your chef-server
+* <b>Kitchen</v> is usefull to test deployments. Configure it to set your test environment unde .kitchen.yml file created when your generate a cookbook
+  - commands:
+    - kitchen create (create env for testing)
+    - kitchen converge (create a desired state)
+    - kitchen login (to log in the VM)
+    - kitchen verify (lauch the test in test/recipes/default_test.rb of your cookbook)
+    - kitchen destroy (destroy your vm)
+
+* <b>Berkshelf</b> is a cookbook management tool that allows you to upload your cookbook and all of its depenedencies to the Chef Server.
+  - `berks install`
+
+* <b>Chef Artefacts</b>
+  - Roles
+  - Environments
+  - Data bags
+
