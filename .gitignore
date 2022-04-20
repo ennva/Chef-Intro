@@ -1,0 +1,6 @@
+.bash_*
+.bashrc
+.vbox_version
+.ssh
+.pki
+nodes/
